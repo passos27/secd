@@ -1,5 +1,7 @@
  $(document).ready(function(){
  	$('.parallax').parallax();
+ 	$('select').material_select();
+ 	$('checkbox').material_checkbox();
  });
 
  $(function () {
