@@ -14,29 +14,48 @@
 		<div class="row">
 			<div class="col s12">
 				
-				<div class="col s12 m6">
-					<div class="card grey darken-1">
-						<div class="card-content white-text">
-							<span class="card-title">Card Title</span>
-							<p>I am a very simple card. I am good at containing small bits of information.
-							I am convenient because I require little markup to use effectively.</p>
-						</div>
-						<div class="card-action">
-							<a href="#">This is a link</a>
-							<a href="#">This is a link</a>
-						</div>
-					</div>
-				</div>
+
+				<?php 
+				if ( have_posts() ) {
+					// query_posts('showposts=100&post_type=palestra');
+					while ( have_posts() ) {
+						the_post(); 
+						?>
+						<div class="col s12 m6">
+							<div class="card">
+								<div class="card-image waves-effect waves-block waves-light">
+									<?php the_post_thumbnail(); ?>
+								</div>
+								<div class="card-content">
+									<div class="chip grey lighten-2"><?php the_category(','); ?></div>
+									<h5 class="card-title grey-text text-darken-4"><?php the_title(); ?></h5>
+									<p><!-- <a href="#">This is a link</a> --></p>
+								</div>
+								<div class="card-action">
+									<div class="chip"><?php the_tags(' '); ?></div>
+								</div>
+							</div>
+
+					    </div>
+
+
+
+						<?php
+						} // end while
+					} // end if
+					?>
 
 
 
 
 
-			</div>
-		</div>
 
-	</div>
-	<!-- coluna 02 -->
+
+</div>
+</div>
+
+</div>
+<!-- coluna 02 -->
 
 </section>
 
